@@ -1,11 +1,15 @@
 Star[] stars = new Star[100];
 Spaceship ship = new Spaceship();
+ArrayList <Asteroid> covid = new ArrayList <Asteroid>();
 public void setup() 
 {
   size(800,600);
   background(0);
   for(int i=0;i<stars.length;i++){
     stars[i]= new Star();
+  }
+    for(int i=0;i<=10;i++){
+    covid.add(new Asteroid());
   }
 }
 public void draw() 
@@ -16,6 +20,16 @@ public void draw()
   }
   ship.show();
   ship.move();
+  for(int i=0;i<covid.size()-1;i++){
+    Asteroid corona = covid.get(i);
+    corona.show();
+    corona.move();
+    System.out.println(dist((float)corona.getmyCenterX(),(float)corona.getmyCenterY(),(float)ship.getmyCenterX(),(float)ship.getmyCenterY()));
+    if(dist((float)corona.getmyCenterX(),(float)corona.getmyCenterY(),(float)ship.getmyCenterX(),(float)ship.getmyCenterY())<=20)
+    {
+      covid.remove(corona);
+    }
+  }
 }
 public void keyPressed()
 {

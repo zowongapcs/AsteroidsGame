@@ -24,7 +24,6 @@ public void draw()
     Asteroid corona = covid.get(i);
     corona.show();
     corona.move();
-    System.out.println(dist((float)corona.getmyCenterX(),(float)corona.getmyCenterY(),(float)ship.getmyCenterX(),(float)ship.getmyCenterY()));
     if(dist((float)corona.getmyCenterX(),(float)corona.getmyCenterY(),(float)ship.getmyCenterX(),(float)ship.getmyCenterY())<=20)
     {
       covid.remove(corona);

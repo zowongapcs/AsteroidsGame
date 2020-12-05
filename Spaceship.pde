@@ -58,4 +58,10 @@ class Spaceship extends Floater
   public void setmyYspeed(int y){
     myYspeed = y;
   }
+  public double getmyCenterX(){
+    return myCenterX;
+  }
+  public double getmyCenterY(){
+    return myCenterY;
+  }
 }
